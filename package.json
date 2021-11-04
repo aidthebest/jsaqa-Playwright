@@ -10,5 +10,11 @@
     "playwright"
   ],
   "author": "Alexander Mizyukin",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.1.0",
+    "jest": "^27.3.1",
+    "playwright": "^1.16.3",
+    "prettier": "^2.4.1"
+  }
 }
