@@ -6,13 +6,15 @@ function sleep(ms) {
   });
 }
 
+const { mail, pass } = require("../user");
+
 (async () => {
   const browser = await chromium.launch({
     headless: false,
     slowMo: 5000,
     devtools: true,
   });
-  const page = await browser.newPage();
+  const page = browser.newPage();
 
   (await page).goto("https://netology.ru");
 
@@ -20,11 +22,15 @@ function sleep(ms) {
 
   await sleep(4000);
 
-  (await page).fill('[type="password"]', "pass");
+  // (await page).fill('[type="password"]', "pass");
+
+  (await page).fill('[type="password"]', pass);
 
   await sleep(4000);
 
-  (await page).fill('[placeholder="Email"]', "mail@mail.ru");
+  // (await page).fill('[placeholder="Email"]', "mail@mail.ru");
+
+  (await page).fill('[placeholder="Email"]', mail);
 
   (await page).pause(); // включает режим инспектора
 
