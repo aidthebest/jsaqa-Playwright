@@ -53,7 +53,7 @@ function sleep(ms) {
 
   await page.click("text=Войти");
 
-  await sleep(4000); //если все данные вносятся в одно поле раскомментить
+  // await sleep(4000); //если все данные вносятся в одно поле раскомментить
 
   (await page).fill('[type="password"]', "pass");
 
