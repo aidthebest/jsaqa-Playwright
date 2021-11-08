@@ -25,15 +25,11 @@ function sleep(ms) {
 
   await page.fill('[type="password"]', pass);
 
-  // await sleep(4000); //если все данные вносятся в одно поле раскомментить
-
   await page.fill('[placeholder="Email"]', mail);
 
   // await page.pause(); // включает режим инспектора
 
   await page.click('button:has-text("Войти")');
-
-  // await sleep(4000);
 
   await expect(page.locator("text=Мои курсы и профессии")).toBeVisible();
 
@@ -53,19 +49,13 @@ function sleep(ms) {
 
   await page.click("text=Войти");
 
-  // await sleep(4000); //если все данные вносятся в одно поле раскомментить
+  await page.fill('[placeholder="Пароль"]', "pass");
 
-  (await page).fill('[type="password"]', "pass");
-
-  await sleep(4000);
-
-  (await page).fill('[placeholder="Email"]', "mail@mail.ru");
+  await page.fill('[placeholder="Email"]', "mail@mail.ru");
 
   // await page.pause(); // включает режим инспектора
 
   await page.click('button:has-text("Войти")');
-
-  // await sleep(4000); //если все данные вносятся в одно поле раскомментить
 
   await expect(
     page.locator("text=Вы ввели неправильно логин или пароль")
